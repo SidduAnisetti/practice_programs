@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>courier</title>
+        <style>
+        *{
+        margin:0;
+        padding:0;
+        font-family:tahoma;
+        }
+        body{
+        background:pink;
+        }
+        h1{
+        background:red;
+        color:white;
+        }
+        form{
+       border:2px cyan;
+       width:30%;
+       height:200px;
+       background:lightgreen;
+       border-radius:20px;
+       border:none;
+        }
+         h3{
+         margin-top:20px;
+        }
+        u{
+        color:cyan;
+        font-size:20px;
+        }
+        table{
+        color:cyan;
+        font-size:20px;
+        }
+        .name{
+        border-radius:10px;
+        background:purple;
+        text-align:center;
+        width:200px;
+        height:25px;
+        out-line:none;
+        border:none;
+        }
+        .name:hover{
+          background:white;
+        }
+        button{
+      background:blue;
+	 color:white;
+     margin-bottom:10px;
+	 padding:8px 80px 10px 80px;
+	 border-radius:20px;
+	 border:none;
+	 outline:none;
+	 font-size:20px;
+	 cursor:pointer;
+        }
+      button:hover{
+      background:green;
+      }
+
+    </style>
+    </head>
+    <body>
+         {% for message in messages %}
+         <div class ='alert alert-{{message.tags}} alert-dismissible fade show' role="alert">
+             <strong>Message:</strong>> {{ message }}
+             <button type="button" class="class" data-dismiss="alert" aria-label="close">
+                 <span aria-hidden="true">&times;</span>
+             </button>
+         </div>
+         {% endfor %}
+
+
+         <h1>WELCOME TO <></> COURIER SERVICES</h1>
+
+
+
+         {% if user.is_authenticated %}
+         <h3>Hello {{ fname }}</h3>
+         <h4>you're successfully logged in.</h4>
+         <button type="submit"><a href="/signout"> SignOut</a>></button>
+
+         {% else %}
+         <button type="submit"><a href="/signup"> SignUp</a></button>
+         <button type="submit"><a href="/signin"> SignIn</a>></button>
+
+         {% endif %}
+         <script src="" async defer></script>
+    </body>
+</html>
